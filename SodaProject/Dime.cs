@@ -11,7 +11,7 @@ namespace SodaProject
 
         public Dime()
         {
-           coinValue = .10;
+           coinValue = 0.10m;
         }
     }
 }

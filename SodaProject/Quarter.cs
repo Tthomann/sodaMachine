@@ -11,7 +11,7 @@ namespace SodaProject
         
         public Quarter()
         {
-            coinValue = .25;
+            coinValue = .25m;
         }
     }
 }

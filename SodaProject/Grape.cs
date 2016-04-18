@@ -12,7 +12,7 @@ namespace SodaProject
         public Grape()
         {
             sodaType = "grape";
-            canPrice = 0.60;
+            canPrice = 0.60m;
         }
    
     }

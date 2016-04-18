@@ -11,7 +11,7 @@ namespace SodaProject
         public Meat()
         {
             sodaType = "meat";
-            canPrice = 0.06;
+            canPrice = 0.06m;
         }
     }
 }

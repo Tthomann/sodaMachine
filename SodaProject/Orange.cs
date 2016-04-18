@@ -8,10 +8,11 @@ namespace SodaProject
 {
     class Orange : Cans
     {
+
         public Orange()
         {
             sodaType = "orange";
-            canPrice = 0.35;
+            canPrice = 0.35m;
         }
     }
 }

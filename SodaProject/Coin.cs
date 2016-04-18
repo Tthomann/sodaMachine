@@ -6,14 +6,11 @@ using System.Threading.Tasks;
 
 namespace SodaProject
 {
-    class Coin
+    class Coin 
     {
-        List<Coin> coinContainer = new List<Coin>();
-        Quarter quarter;
-        Nickle nickle;
-        Dime dime;
-        Penny penny;
-        public double coinValue;
+        public List<Coin> coinContainer = new List<Coin>();
+        public decimal coinValue;
+        public decimal totalInputValue;
         int numberOfCoins;
         public Coin()
         {
@@ -24,18 +21,22 @@ namespace SodaProject
             for(numberOfCoins = 0; numberOfCoins < 20; numberOfCoins++)
             {
                 coinContainer.Add(new Quarter());
+              totalInputValue += 0.25m;
             }
             for (numberOfCoins = 0; numberOfCoins < 20; numberOfCoins++)
             {
                 coinContainer.Add(new Nickle());
+                totalInputValue += 0.15m;
             }
             for (numberOfCoins = 0; numberOfCoins < 10; numberOfCoins++)
             {
                 coinContainer.Add(new Dime());
+                totalInputValue += 0.10m;
             }
             for (numberOfCoins = 0; numberOfCoins < 50; numberOfCoins++)
             {
                 coinContainer.Add(new Penny());
+               totalInputValue += 0.01m;
             }
         }
     }
