@@ -29,11 +29,17 @@ namespace SodaProject
         }
         public void machineMenu()
         {
+            Console.WriteLine("");
             Console.WriteLine("---------------------");
+            Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine("| (1)   [Grape]     |");
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("| (2)   [Orange]    |");
+            Console.ForegroundColor = ConsoleColor.DarkRed;
             Console.WriteLine("| (3)   [Meat]      |");
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("---------------------");
+            Console.WriteLine("");
         }
         public void startingMachineCoins()
         {
@@ -71,14 +77,19 @@ namespace SodaProject
 
             while (finished == false)
             {
+                Console.WriteLine("");
                 Console.WriteLine("type 1 to add a quarter to the machine");
                 Console.WriteLine("type 2 to add a nickle to the machine");
                 Console.WriteLine("type 3 to add a dime to the machine");
                 Console.WriteLine("type 4 to add a penny to the machine");
                 Console.WriteLine("type 0 to stop putting change in the machine");
+                Console.WriteLine("");
                 userInput = Convert.ToInt32(Console.ReadLine());
                 if (userInput == 1)
                 {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("you've added a quarter to the machine");
+                    Console.ForegroundColor = ConsoleColor.White;
                     TransactionCoins.Add(quarter);
                     MachineCoins.Add(quarter);
                     coin.totalInputValue += quarter.coinValue;
@@ -86,6 +97,9 @@ namespace SodaProject
                 }
                 else if (userInput == 2)
                 {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("you've added a nickle to the machine");
+                    Console.ForegroundColor = ConsoleColor.White;
                     TransactionCoins.Add(nickle);
                     MachineCoins.Add(nickle);
                     coin.totalInputValue += nickle.coinValue;
@@ -93,6 +107,9 @@ namespace SodaProject
                 }
                 else if (userInput == 3)
                 {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("you've added a dime to the machine");
+                    Console.ForegroundColor = ConsoleColor.White;
                     TransactionCoins.Add(dime);
                     MachineCoins.Add(dime);
                     coin.totalInputValue += dime.coinValue;
@@ -100,6 +117,9 @@ namespace SodaProject
                 }
                 else if (userInput == 4)
                 {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("you've added a penny to the machine");
+                    Console.ForegroundColor = ConsoleColor.White;
                     TransactionCoins.Add(penny);
                     MachineCoins.Add(penny);
                     coin.totalInputValue += penny.coinValue;
@@ -176,10 +196,16 @@ namespace SodaProject
         }
 
             public void purchaseSoda() {
-                Console.WriteLine("type 1 to buy grape soda");
-                Console.WriteLine("type 2 to buy orange soda");
-                Console.WriteLine("type 3 to buy meat soda");
-                userInput = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("----------------------------");
+            Console.WriteLine("| type 1 to buy grape soda  |");
+            Console.WriteLine("| type 2 to buy orange soda |");
+            Console.WriteLine("| type 3 to buy meat soda   |");
+            Console.WriteLine("-----------------------------");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("");
+            userInput = Convert.ToInt32(Console.ReadLine());
                 if (stockCans.Count == 0)
                 {
                     Console.WriteLine("no cans left.");
@@ -188,13 +214,20 @@ namespace SodaProject
                 {
                     if (grape.canPrice > coin.totalInputValue)
                     {
-                        Console.WriteLine("not enough money to buy soda of that type");
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("not enough money to buy soda of that type");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    
 
                     }
                     else if (grape.canPrice < coin.totalInputValue)
                     {
-                        Console.WriteLine("customer has bought grape soda!");
-                        coin.totalInputValue -= grape.canPrice;
+                    Console.WriteLine("");
+                    Console.ForegroundColor = ConsoleColor.Magenta;
+                    Console.WriteLine("customer has bought grape soda!");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine("");
+                    coin.totalInputValue -= grape.canPrice;
                         getChange();
                         stockCans.Remove(grape);
                 
@@ -208,8 +241,12 @@ namespace SodaProject
                     }
                     else if (orange.canPrice < coin.totalInputValue)
                     {
-                        Console.WriteLine("customer has bought orange soda!");
-                        coin.totalInputValue -= orange.canPrice;
+                    Console.WriteLine("");
+                    Console.ForegroundColor = ConsoleColor.DarkYellow;
+                    Console.WriteLine("customer has bought orange soda!");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine("");
+                    coin.totalInputValue -= orange.canPrice;
                         getChange();
                         stockCans.Remove(orange);
                    
@@ -223,8 +260,12 @@ namespace SodaProject
                     }
                     else if (coin.totalInputValue > meat.canPrice)
                     {
-                        Console.WriteLine("customer is stupid and bought 'meat' soda...");
-                        coin.totalInputValue -= meat.canPrice;
+                    Console.WriteLine("");
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                    Console.WriteLine("customer is stupid and bought 'meat' soda...");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine("");
+                    coin.totalInputValue -= meat.canPrice;
                         getChange();
                         stockCans.Remove(meat);
                  
